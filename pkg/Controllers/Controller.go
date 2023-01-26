@@ -30,11 +30,12 @@ func (ct *Controller) Routes(router *gin.RouterGroup) {
 }
 
 func (ct *Controller) healthCheck(ctx *gin.Context) {
-	ctx.IndentedJSON(http.StatusOK, "Alive")
+	ctx.JSON(http.StatusOK, "Alive")
 }
 func (ct *Controller) UseSavePage(c *gin.Context) {
 	var newPage models.Page
 	if err := c.BindJSON(&newPage); err != nil {
+	c.IndentedJSON(http.StatusBadRequest,err)
 	return
 	}
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
@@ -49,6 +50,7 @@ func (ct *Controller) UseSavePage(c *gin.Context) {
 func (ct *Controller) UseComputeResult(c *gin.Context) {
 	var words models.Keywords
 	if err := c.BindJSON(&words); err != nil {
+		c.IndentedJSON(http.StatusBadRequest,err)
 	return
 	}
 	ans, err := ct.SearchService.ComputeResult(c, words)
