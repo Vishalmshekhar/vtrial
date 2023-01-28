@@ -7,7 +7,7 @@ import (
 	"vtrial/pkg/External"
 	"vtrial/pkg/Models"
 
-	"go.mongodb.org/mongo-driver/bson"
+	
 )
 
 /*Notice how we always declare APIS in services this provides an additional layer of abstraction
@@ -29,14 +29,8 @@ func (s SearchService) SavePage(ctx context.Context, page models.Page) (error) {
 }
 
 func (s SearchService) ComputeResult(ctx context.Context, words models.Keywords) ([]string, error) {
-temp := s.DBClient.GetAllCollection()
-pages := []models.Page{}
-for _, p := range temp {
-	var s models.Page
-	bsonBytes, _ := bson.Marshal(p)
-	bson.Unmarshal(bsonBytes, &s)
-	pages = append(pages, s)
-}
+pages := s.DBClient.GetAllCollection()
+
 res := []models.Result{}
 for i := 0; i < len(pages); i++ {
 	var tempRs models.Result

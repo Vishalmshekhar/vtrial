@@ -1,0 +1,14 @@
+mode: set
+vtrial/pkg/services/SearchService.go:23.65,25.2 1 1
+vtrial/pkg/services/SearchService.go:27.80,29.2 1 1
+vtrial/pkg/services/SearchService.go:31.100,35.33 3 1
+vtrial/pkg/services/SearchService.go:52.1,54.31 3 1
+vtrial/pkg/services/SearchService.go:57.1,57.16 1 1
+vtrial/pkg/services/SearchService.go:35.33,38.46 3 1
+vtrial/pkg/services/SearchService.go:45.1,45.18 1 1
+vtrial/pkg/services/SearchService.go:49.2,49.27 1 1
+vtrial/pkg/services/SearchService.go:38.46,39.53 1 1
+vtrial/pkg/services/SearchService.go:39.53,40.70 1 1
+vtrial/pkg/services/SearchService.go:40.70,42.12 1 1
+vtrial/pkg/services/SearchService.go:45.18,48.2 2 1
+vtrial/pkg/services/SearchService.go:54.31,56.2 1 1
